@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="fonts/demo.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/toggle_animation.css" />
+    <script src="js/jquery-1.7.1.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/line.js"></script>
+    <script src="js/vector.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/log.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <img class="logo" src="images/logo.PNG" alt=""/>
+    <menu>
+        <ul class="border-light border-light-bottom">
+            <li class="active">
+                <p class="iconfont icon-shouye"><a href="#"> 我的工作台</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-leimu"><a href="#"> 我的参数</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-bangzhuzhongxin"><a href="#"> 系统配置</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-pengyou"><a href="#"> 业务办理</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-yishouchu"><a href="#"> 客户管理</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-shezhi"><a href="#"> 应收类</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-duozhongzhifu"><a href="#"> 公共管理</a></p>
+            </li>
+        </ul>
+    </menu>
+    <div class="ucenter">
+        <img src="images/user.jpg" alt="">
+        <span>olaolaola</span>
+        <span>退出</span>
+    </div>
+</header>
+
+<div class="body">
+    <aside>
+<!--
+        <div class="user">
+            <img src="images/user.jpg" alt=""/>
+        </div>
+-->
+        <ul class="sidebar">
+            <li>
+                <h3>先票后货三方</h3>
+                <ul class="border-light border-light-right">
+<!--
+                    <li>
+                        <p class="iconfont icon-shouye">我的工作台</p>
+                        <i class="iconfont icon-xiangyou1"></i>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-gonglve">提货通知书</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-dingdan">逾期处理确认</p>
+                    </li>
+-->
+                </ul>
+            </li>
+            <li>
+                <h3>保税仓</h3>
+                <ul class="border-light border-light-right">
+<!--
+                    <li>
+                        <p class="iconfont icon-pengyou">客户管理</p>
+                        <i class="iconfont icon-xiangyou1"></i>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-pinpai">三方协议管理</p>
+                        <i class="iconfont icon-xiangyou1"></i>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-xinxi">业务管理</p>
+                        <i class="iconfont icon-xiangyou1"></i>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-zhengli">放款确认</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-xiangbao">提货管理</p>
+                    </li>
+-->
+                </ul>
+            </li>
+            <li>
+                <h3>会员预付款</h3>
+                <ul class="border-light border-light-right">
+                    <li>
+                        <p class="iconfont icon-tishi">订单维护计划</p>
+                    </li>
+                    <li class="active">
+                        <p class="iconfont icon-pinpai">三方协议管理</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-zhengli">
+                            <span>放款管理</span>
+                            <i class="iconfont icon-xiangxia2"></i>
+                        </p>
+                        <ul>
+                            <li><p>放款申请与维护</p></li>
+                            <li><p>放款确认（手工）</p></li>
+                            <li><p>收款确认</p></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-duozhongzhifu">还款管理</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-xiangbao">提货管理</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-gonglve">提货通知书</p>
+                    </li>
+                    <li>
+                        <p class="iconfont icon-tishi">逾期处理确认</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <main>
+        <article class="list-option">
+            <section class="list-search form-tab">
+                <h2>输入查询条件</h2>
+                <div class="list-search-content content">
+                    <section>
+                        <div>
+                            <label>买方会员名称：</label>
+                            <p>
+                                <input type="text" class="input-text" placeholder="请输入买方会员名称">
+                            </p>
+                        </div>
+                        <div>
+                            <label>第三方平台名称：</label>
+                            <p>
+                                <input type="text" class="input-text" placeholder="请输入第三方平台名称">
+                            </p>
+                        </div>
+                        <div>
+                            <label>协议开始日233：</label>
+                            <p>
+                                <input type="date" value="2017-8-02" placeholder="2017-8-02" class="input-text">
+                                <i></i>
+                                <input type="date" class="input-text">
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <label>卖方会员名称：</label>
+                            <p>
+                                <input type="text" class="input-text" placeholder="请输入卖方会员名称">
+                            </p>
+                        </div>
+                        <div>
+                            <label>协议名称：</label>
+                            <p>
+                                <input type="text" class="input-text" placeholder="请输入协议名称">
+                            </p>
+                        </div>
+                        <div>
+                            <label>协议到期日：</label>
+                            <p>
+                                <input type="date" class="input-text">
+                                <i></i>
+                                <input type="date" class="input-text">
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="list-search-btn form-btn">
+                    <a class="btn btn-primary btn-lg ripple">查询</a>
+                    <a class="btn btn-primary btn-lg ripple">重置</a>
+                </div>
+            </section>
+            <form id="addForm">
+                <section class="list-add form-tab">
+                    <h2>
+                        <span>供应链金融网络信息</span>
+                        <div class="container">
+                            <div class="bg_con">
+                                <input id="checked_1" type="checkbox" class="switch" />
+                                <label for="checked_1"></label>
+                            </div>
+                        </div>
+                    </h2>
+                    <div class="list-add-content content">
+                        <section>
+                            <div>
+                                <label>网络代号：</label>
+                                <p>
+                                    <input name="networkCode" type="text" class="input-text" placeholder="请输入网络代号">
+                                </p>
+                            </div>
+                            <div>
+                                <label>业务模式：</label>
+                                <p>
+                                    <select name="businessModel" class="input-text">
+                                        <option>所有模式</option>
+                                        <option>条件一连续2天</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>买方会员ID：</label>
+                                <p>
+                                    <input name="buyerMember_id" type="text" class="input-text" placeholder="请输入买方会员ID">
+                                </p>
+                            </div>
+                            <div>
+                                <label>卖方会员ID：</label>
+                                <p>
+                                    <input name="sellerMember_id" type="text" class="input-text" placeholder="请输入卖方会员ID">
+                                </p>
+                            </div>
+                            <div>
+                                <label>第三方平台编号：</label>
+                                <p>
+                                    <input name="thirdPartyPlatform_number" type="text" class="input-text" placeholder="请输入第三方平台编号">
+                                </p>
+                            </div>
+                        </section>
+                        <section>
+                            <div>
+                                <label>行业类型：</label>
+                                <p>
+                                    <select name="industryType" class="input-text">
+                                        <option>所有模式</option>
+                                        <option>条件一连续2天</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>主办机构：</label>
+                                <p>
+                                    <input name="sponsor" type="text" class="input-text" placeholder="请输入网络代号">
+                                </p>
+                            </div>
+                            <div>
+                                <label>买方会员名称：</label>
+                                <p>
+                                    <input name="buyerMember_name" type="text" class="input-text" placeholder="请输入买方会员名称">
+                                </p>
+                            </div>
+                            <div>
+                                <label>卖方会员名称：</label>
+                                <p>
+                                    <input name="sellerMember_name" type="text" class="input-text" placeholder="请输入卖方会员名称">
+                                </p>
+                            </div>
+                            <div>
+                                <label>第三方平台名称：</label>
+                                <p>
+                                    <input name="thirdPartyPlatform_name" type="text" class="input-text" placeholder="请输入第三方平台名称">
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <h2>三方协议信息</h2>
+                    <div class="list-add-content content">
+                        <section>
+                            <div>
+                                <label>系统协议编号：</label>
+                                <p>
+                                    <input name="systemProtocolNumber" type="text" class="input-text" placeholder="请输入系统协议编号">
+                                </p>
+                            </div>
+                            <div>
+                                <label>协议金额：</label>
+                                <p>
+                                    <input name="agreementAmount" type="number" class="input-text" placeholder="请输入协议金额">
+                                </p>
+                            </div>
+                            <div class="form-tab-row">
+                                <label>允许授值产品：</label>
+                                <ul class="input-checkbox">
+                                    <li>
+                                        <input name="allowValueProducts[]" type="checkbox" class="input-text">
+                                        <span>银行承兑汇票</span>
+                                    </li>
+                                    <li>
+                                        <input name="allowValueProducts[]" type="checkbox" class="input-text">
+                                        <span>留助资金贷款</span>
+                                    </li>
+                                    <li>
+                                        <input name="allowValueProducts[]" type="checkbox" class="input-text">
+                                        <span>法人账户透支</span>
+                                    </li>
+                                    <li>
+                                        <input name="allowValueProducts[]" type="checkbox" class="input-text">
+                                        <span>国内借用证</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <label>协议开始日：</label>
+                                <p class="must">
+                                    <input name="dateOfAgreement_start" type="date" class="input-text">
+                                </p>
+                            </div>
+                            <div>
+                                <label>操货期：</label>
+                                <p>
+                                    <input name="handlingDate" type="number" class="input-text" placeholder="请输入操货期">
+                                </p>
+                            </div>
+                            <div>
+                                <label>提货价值确定方式：</label>
+                                <p>
+                                    <select name="deliveryValueDeterminationMethod" class="input-text">
+                                        <option>所有模式</option>
+                                        <option>条件一连续2天</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>自有资金/首付保证金提货比例：</label>
+                                <p>
+                                    <input name="firstDepositDeliveryRatio" type="number" class="input-text" placeholder="请输入有资金/首付保证金提货比例">
+                                </p>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="must">
+                                <label>三方协议编号：</label>
+                                <p>
+                                    <input name="threePartyAgreementNumber" type="text" class="input-text" placeholder="请输入三方协议编号">
+                                </p>
+                            </div>
+                            <div class="must">
+                                <label>是否手动提货：</label>
+                                <p>
+                                    <select name="takeDeliveryManually" class="input-text">
+                                        <option>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="must">
+                                <label>协议到期日：</label>
+                                <p>
+                                    <input name="dateOfAgreement_end" type="date" class="input-text" placeholder="请输入协议到期日">
+                                </p>
+                            </div>
+                            <div>
+                                <label>提货模式：</label>
+                                <p>
+                                    <select name="deliveryModel" class="input-text">
+                                        <option>提货一</option>
+                                        <option>否</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>节假日处理：</label>
+                                <p>
+                                    <select name="holidayManagement" class="input-text">
+                                        <option>提前</option>
+                                        <option>条件一连续2天</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>未提货责任：</label>
+                                <p>
+                                    <select name="liabilityNotToTakeDeliveryOfGoods" class="input-text">
+                                        <option>差额退款</option>
+                                        <option>条件一连续2天</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div>
+                                <label>首付保证金比例：</label>
+                                <p>
+                                    <input name="downPaymentMargin" type="number" class="input-text" placeholder="请输入首付保证金比例">
+                                </p>
+                            </div>
+                            <div>
+                                <label>自有资金比例：</label>
+                                <p>
+                                    <input name="proportionOfFundsOwned" type="number" class="input-text" placeholder="请输入自有资金比例">
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <h2 class="h2-ctl">
+                        <span>收款账户信息列表</span>
+                        <ul>
+                            <li><a class="iconfont icon-add">新增</a></li>
+                            <li><a class="iconfont icon-shanchu">删除</a></li>
+                        </ul>
+                    </h2>
+                    <div class="list-add-content content">
+                        <table class="list-table">
+                            <thead>
+                                <tr>
+                                    <th>收款核心企业ID</th>
+                                    <th>收款核心企业名称</th>
+                                    <th>收款账户号</th>
+                                    <th>开户行</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input name="receivablesCoreEnterpriseId[]" type="text" class="border-bottom-input"></td>
+                                    <td><input name="receivablesCoreEnterpriseName[]" type="text" class="border-bottom-input"></td>
+                                    <td><input name="receivablesAccountNumber[]" type="text" class="border-bottom-input"></td>
+                                    <td><input name="openingBank[]" type="text" class="border-bottom-input"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="list-add-btn form-btn">
+                        <a id="addFormSubmit" class="btn btn-primary btn-lg ripple">提交</a>
+                        <a id="removeFormSubmit" class="btn btn-primary btn-lg ripple">关闭</a>
+                    </div>
+                </section>
+            </form>
+        </article>
+        <article class="list-content">
+            <h2>协议列表 <span></span></h2>
+            <section class="list-content-condition">
+                <ul class="list-control">
+                    <li>
+                        <select class="input-text">
+                            <option>所有条件</option>
+                            <option>条件一连续2天</option>
+                        </select>
+                        <input type="text" class="input-text">
+                        <a class="btn btn-primary btn-lg ripple">高级查询</a>
+                    </li>
+                    <li>
+                        <a class="iconfont icon-add">新增</a>
+                    </li>
+                    <li>
+                        <a class="iconfont icon-edit">修改</a>
+                    </li>
+                    <li>
+                        <a class="iconfont icon-continue">续签</a>
+                    </li>
+                    <li>
+                        <a class="iconfont icon-shanchu">删除</a>
+                    </li>
+                    <li>
+                        <a class="iconfont icon-sousuoleimu">查看明细</a>
+                    </li>
+                </ul>
+            </section>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th><input type="checkbox"></th>
+                        <th>协议编号</th>
+                        <th>买方会员名称</th>
+                        <th>卖方会员名称</th>
+                        <th>第三方平台名称</th>
+                        <th>协议金额</th>
+                        <th>协议开始日</th>
+                        <th>协议到期日</th>
+                        <th>协议状态</th>
+                        <th>业务模式</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="checkbox"></td>
+                        <td>XY16155454</td>
+                        <td>天天集团</td>
+                        <td>吕隆集团</td>
+                        <td>222</td>
+                        <td>CNY3,000.00</td>
+                        <td>2016-03-01</td>
+                        <td>2016-03-17</td>
+                        <td>
+                            <span>生效</span>
+                            <ul class="lamp-list">
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>会员预付款</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><input type="checkbox"></td>
+                        <td>XY16155454</td>
+                        <td>天天集团</td>
+                        <td>吕隆集团</td>
+                        <td>222</td>
+                        <td>CNY3,000.00</td>
+                        <td>2016-03-01</td>
+                        <td>2016-03-17</td>
+                        <td>
+                            <span>生效</span>
+                            <ul class="lamp-list">
+                                <li class="blue"></li>
+                                <li class="blue"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>会员预付款</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="checkbox"></td>
+                        <td>XY16155454</td>
+                        <td>天天集团</td>
+                        <td>吕隆集团</td>
+                        <td>222</td>
+                        <td>CNY3,000.00</td>
+                        <td>2016-03-01</td>
+                        <td>2016-03-17</td>
+                        <td>
+                            <span>生效</span>
+                            <ul class="lamp-list">
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>会员预付款</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><input type="checkbox"></td>
+                        <td>XY16155454</td>
+                        <td>天天集团</td>
+                        <td>吕隆集团</td>
+                        <td>222</td>
+                        <td>CNY3,000.00</td>
+                        <td>2016-03-01</td>
+                        <td>2016-03-17</td>
+                        <td>
+                            <span>生效</span>
+                            <ul class="lamp-list">
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li class="green"></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>会员预付款</td>
+                    </tr>
+                    <tr>
+                        <td class="iconfont icon-new">5</td>
+                        <td><input type="checkbox"></td>
+                        <td>XY16155454</td>
+                        <td>天天集团</td>
+                        <td>吕隆集团</td>
+                        <td>222</td>
+                        <td>CNY3,000.00</td>
+                        <td>2016-03-01</td>
+                        <td>2016-03-17</td>
+                        <td>
+                            <span>生效</span>
+                            <ul class="lamp-list">
+                                <li class="blue"></li>
+                                <li class="blue"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>会员预付款</td>
+                    </tr>
+                </tbody>
+            </table>
+            <section class="list-content-page">
+                <span>
+                    第<input class="border-bottom-input" type="text" value="1" />共<em>1</em>页
+                </span>
+                <span>
+                    显示<em>1</em>到<em>5</em>，共<em>5</em>记录
+                </span>
+            </section>
+        </article>
+        <footer><span>YUNPHANT BLOCKCHAIN 2017</span></footer>
+    </main>
+</div>
+
+<div class="alter-layout" style=" display: none;">
+    <article class="log">
+        <ul>
+            <li><i></i><span>表单提交</span></li>
+            <li><i></i><span>交易转发</span></li>
+            <li><i></i><span>vp0接收交易请求</span></li>
+            <li><i></i><span>表单提交</span></li>
+            <li><i></i><span>vp0打包并分发交易请求</span></li>
+            <li><i></i><span>vp0接收交易请求</span></li>
+            <li><i></i><span>表单提交</span></li>
+            <li><i></i><span>vp0打包并分发交易请求</span></li>
+            <li><i></i><span>vp0接收交易请求</span></li>
+        </ul>
+    </article>
+    <article class="force">
+        <svg viewbox="-400 -400 800 800 " width="300" height="300">
+            <path id="links" stroke-width="5" stroke="gray"/>
+            <path id="dir" d="" fill="transparent" ></path>
+            <defs>
+                <filter id="f1" x="0" y="0" width="200%" height="200%">
+                    <feOffset result="SourceAlphaDeviated" in="SourceGraphic" dx="20" dy="20"/>
+                    <feOffset result="ShadowDeviated" in="SourceAlpha" dx="20" dy="20"/>
+                    <feGaussianBlur result="blurOut" in="ShadowDeviated" stdDeviation="8" />
+                    <feBlend in="SourceAlphaDeviated" in2="blurOut" mode="normal" />
+                </filter>
+            </defs>
+        </svg>
+    </article>
+</div>
+</body>
+</html>

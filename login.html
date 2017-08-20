@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+    <link rel="stylesheet" href="fonts/demo.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/toggle_animation.css" />
+    <link rel="stylesheet" media="screen" href="css/canvas.css">
+
+<link type="text/css" rel="stylesheet" href="css/login.css" />
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="js/canvas.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	handleComplete();
+}
+function handleComplete() {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	exportRoot = new lib.canvas();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(true,'width',true,2);	
+	fnStartAnimation();
+}
+</script>
+</head>
+
+<body onload="init();" style="margin:0px;">
+
+<div class="body-bg">
+    <div class="wrapper">
+
+        <!-- particles.js container -->
+        <div id="particles-js"></div>
+    </div>
+</div>
+
+<header class="header">
+    <img class="logo" src="images/logo.PNG" alt=""/>
+    <menu>
+        <ul class="border-light border-light-bottom">
+            <li>
+                <p class=""><a href="#"> 保税仓单标题</a></p>
+            </li>
+            <!--<li>
+                <p class="iconfont icon-leimu"><a href="#"> 我的参数</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-bangzhuzhongxin"><a href="#"> 业务办理</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-pengyou"><a href="#"> 客户管理</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-yishouchu"><a href="#"> 应收类</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-shezhi"><a href="#"> 公共管理</a></p>
+            </li>
+            <li>
+                <p class="iconfont icon-duozhongzhifu"><a href="#"> 预付类</a></p>
+            </li>-->
+        </ul>
+    </menu>
+    <div class="search">
+        <input type="text" placeholder="请输入搜索内容...">
+        <button type="submit"></button>
+    </div>
+</header>
+
+<main>
+    <div class="main-right">
+        <div class="login-herd">
+            <img src="images/user.jpg" alt="" />
+            <div class="arc">
+                <div class="circle c-1"></div>
+                <div class="circle c-2"></div>
+                <div class="circle c-3"></div>
+            </div>        
+        </div>
+        <div class="login-slide">
+            <p class="sing-up">需要新账户？ <a href="#">注册</a></p>
+            <form id="form-login" action="index.html" method="post">
+                <div><i class="icon iconfont icon-user"></i><input autocomplete="off" type="text" name="username" placeholder="用户名" required /></div>
+                <div><i class="icon iconfont icon-password"></i><input autocomplete="off" type="password" name="password" placeholder="密码" required /></div>
+                <div>
+                    <i class="icon iconfont icon-level"></i>
+                    <select>
+                        <option>请选择你的职务</option>
+                        <option>职务一</option>
+                        <option>职务二</option>
+                    </select>
+                </div>
+                <button type="submit">确认登录</button>
+            </form>
+        </div>
+        <p class="forget-password"><a href="#">忘记密码？</a></p>
+    </div>
+</main>
+
+<script type="text/javascript" src="js/login.js"></script>
+
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script>
+    $('#form-login').submit(function (e) {
+        e.preventDefault();
+        window.setTimeout(function () {
+            window.location.href = window.location.href.replace('login.html','index.html');
+        },1500);
+    })
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function() {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
