@@ -21,6 +21,14 @@ $(document).ready(function(e) {
 			},4000);
 		},4500);
 	});
+
+	$('#form-login').submit(function (e) {
+		e.preventDefault();
+		window.setTimeout(function () {
+			window.location.href = window.location.href.replace('login.html','index.html');
+		},1500);
+	})
+
 });
 /*function timeoutActiveFun(){
 	window.clearTimeout(timeoutActive);	

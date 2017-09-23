@@ -111,6 +111,11 @@ menu ul li{
     background: #272632;
     box-shadow: 0 5px 4px -3px rgba(0,0,0,.1) inset;
     width: 100%;
+    font-weight: normal;
+}
+
+.sidebar>li>ul>li>ul>li.active p{
+    background: rgba(28,73,114,0.7);
 }
 
 .sidebar ul li p:hover{

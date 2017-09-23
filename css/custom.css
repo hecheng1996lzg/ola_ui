@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'MSYHL';
-    src: url('../fonts/Microsoft-Yahei-UI-Light.ttc');
-}
 body,ul,li,p,h1,h2,h3,h4,h5,h6,img,br,hr,table,tr,td,dl,dt,dd,form,input,button,header,strong,article,nav,main,footer,figure,figcaption{
     margin: 0;
     padding: 0;
